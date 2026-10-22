@@ -8,7 +8,7 @@ type PostBadgeProps = {
 export const PostBadge = ({ post }: PostBadgeProps) => {
   return (
     <Link className="post-badge" to={`/posts/${post.id}`}>
-      {post.name}
+      {post.title}
     </Link>
   );
 };

@@ -17,7 +17,7 @@ export default function PostPage() {
 
   return (
     <main>
-      <h1>{post.name}</h1>
+      <h1>{post.title}</h1>
       <p>{post.challenge}</p>
       <p>{post.deadline}</p>
       <LikeButton postId={post.id} />

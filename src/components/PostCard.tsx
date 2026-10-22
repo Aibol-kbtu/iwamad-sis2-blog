@@ -11,7 +11,7 @@ export default function PostCard({ post }: PostCardProps) {
     <li className="post-card" id={`post-${post.id}`}>
       <h2>
         <Link to={`/posts/${post.id}`}>
-          {post.name}
+          {post.title}
         </Link>
       </h2>
 
