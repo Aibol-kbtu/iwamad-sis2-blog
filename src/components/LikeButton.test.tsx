@@ -1,0 +1,22 @@
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/vitest';
+import userEvent from '@testing-library/user-event';
+import { describe, it, expect } from 'vitest';
+import LikeButton from './LikeButton';
+import { LikesProvider } from '../context/LikesContext';
+
+describe('LikeButton', () => {
+  it('changes its visible text after a click', async () => {
+    render(
+      <LikesProvider>
+        <LikeButton postId={1} />
+      </LikesProvider>
+    );
+    const button = screen.getByRole('button', { name: /like/i });
+    expect(button).toHaveTextContent('🤍 Like (0)');
+
+    await userEvent.click(button);
+
+    expect(button).toHaveTextContent('❤️ Liked (1)');
+  });
+});
